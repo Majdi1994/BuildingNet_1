@@ -3,7 +3,7 @@ from collections import Counter
 from sklearn.datasets import make_classification
 from imblearn.over_sampling import SMOTE 
 # load your data 
-data_dir='./data/train_test_dataset_10s_11_classes.pt'
+data_dir='/content/drive/My Drive/data'
 data = torch.load(data_dir)
 x,y=data['train_data'],data['train_labels']
 print('Original dataset shape %s' % Counter(y.numpy()))
