@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from utils import *
 device = torch.device('cpu')
 # load data
-my_data= torch.load("/content/drive/My Drive/data/train_test_dataset_10s_11_classes.pt")
+my_data= torch.load("/content/drive/My Drive/data/train_test_dataset_1024_smote_os.pt")
 train_dl = DataLoader(MyDataset(my_data['train_data'], my_data['train_labels']), batch_size=256, shuffle=True, drop_last=True)
 test_dl = DataLoader(MyDataset(my_data['test_data'], my_data['test_labels']), batch_size=10, shuffle=False, drop_last=False)
 model = CNN_1D(1,256,0.5).to(device)
