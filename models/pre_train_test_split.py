@@ -8,8 +8,6 @@ import torch.nn as nn
 from sklearn.metrics import classification_report
 device = torch.device('cpu')
 def trainer(model, train_dl, test_dl, data_id, config, params):
-    #class_weights=(torch.FloatTensor([0.01,1,1,1,1,1,1,1,1,1,1]))
-    #criterion = nn.CrossEntropyLoss(weight = class_weights)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=params['lr'])
     scheduler = StepLR(optimizer, step_size=10, gamma=0.8)
