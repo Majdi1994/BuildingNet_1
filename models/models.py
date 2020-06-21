@@ -5,16 +5,6 @@ from torch.nn.utils import weight_norm
 import math
 device = torch.device('cpu')
 import random
-# discriminator network
-def dicriminator():
-    discriminator = nn.Sequential(
-        nn.Linear(64, 64),
-        nn.ReLU(),
-        nn.Linear(64, 32),
-        nn.ReLU(),
-        nn.Linear(32, 1)
-    ).to(device)
-    return discriminator
 class Flatten(nn.Module):
     def forward(self, input):
         return input.view(input.size(0), -1)
